@@ -1,0 +1,221 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block titulo %}
+HdP | Página Principal
+{% endblock %}
+
+{% block contenido %}
+
+<!-- BIENVENIDA -->
+<section class="inicio-bienvenida">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-4">
+                <h1>Bienvenido a Huellas del Puerto</h1>
+                <p class="justify">
+                    Rescatamos, rehabilitamos y buscamos hogares responsables
+                    para perros y gatos en situación de abandono.
+                </p>
+                <a href="/mascotas/" class="btn btn-primary">Ver mascotas</a>
+            </div>
+
+            <div class="col-12 col-md-8 centered">
+                <img
+                    class="img-fluid"
+                    src="{% static 'core/img/bienvenida.png' %}"
+                    alt="Perros y gatos de la fundación"
+                />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SOBRE LA FUNDACIÓN -->
+<section class="inicio-fundacion">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-5">
+                <img
+                    class="img-fluid"
+                    src="{% static 'core/img/fundacion.png' %}"
+                    alt="Mascotas de la fundación"
+                />
+            </div>
+
+            <div class="col-12 col-md-7">
+                <h2>Sobre la Fundación</h2>
+                <p class="justify">
+                    La Fundación Huellas del Puerto es una organización sin
+                    fines de lucro que se dedica a rescatar, rehabilitar y
+                    encontrar hogares responsables para perros y gatos en
+                    situación de abandono.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MASCOTAS DESTACADAS -->
+<section class="inicio-mascotas">
+    <div class="container padtopbottom">
+        <h2>Mascotas Destacadas</h2>
+
+        <div class="row">
+            <div class="col-12 col-md-4 paddingtop">
+                <div class="card">
+                    <img
+                        src="{% static 'core/img/perro1.jpg' %}"
+                        class="card-img-top tarjetas-img"
+                        alt="Max, perro en adopción"
+                    />
+                    <div class="card-body">
+                        <h3 class="card-title">Max</h3>
+                        <p class="card-text">Cariñoso y juguetón</p>
+                        <a href="/mascotas/" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 paddingtop">
+                <div class="card">
+                    <img
+                        src="{% static 'core/img/gato2.jpg' %}"
+                        class="card-img-top tarjetas-img"
+                        alt="Simba, gato en adopción"
+                    />
+                    <div class="card-body">
+                        <h3 class="card-title">Simba</h3>
+                        <p class="card-text">Calmado y cariñoso</p>
+                        <a href="/mascotas/" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 paddingtop">
+                <div class="card">
+                    <img
+                        src="{% static 'core/img/perro3.jpg' %}"
+                        class="card-img-top tarjetas-img"
+                        alt="José Pedro, perro en adopción"
+                    />
+                    <div class="card-body">
+                        <h3 class="card-title">José Pedro</h3>
+                        <p class="card-text">Tranquilo y protector</p>
+                        <a href="/mascotas/" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CÓMO COLABORAR -->
+<section class="inicio-colaborar">
+    <div class="container padtopbottom">
+        <h2>¿Cómo puedes colaborar?</h2>
+
+        <div class="row">
+            <div class="col-12 col-md-4 paddingtop">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Voluntariado</h3>
+                        <i class="bi bi-person-heart fs-1"></i>
+                        <p class="card-text">
+                            Ayuda en el cuidado, rehabilitación y bienestar de
+                            nuestros animales.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 paddingtop">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Hogar temporal</h3>
+                        <i class="bi bi-house-heart fs-1"></i>
+                        <p class="card-text">
+                            Ofrece un espacio seguro mientras buscamos una
+                            familia definitiva.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 paddingtop">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Donaciones</h3>
+                        <i class="bi bi-heart-fill fs-1"></i>
+                        <p class="card-text">
+                            Tu aporte ayuda a financiar alimentación y atención
+                            veterinaria.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ADOPCIÓN -->
+<section class="inicio-adoptar">
+    <div class="container padtopbottom">
+        <div class="row text-center">
+            <div class="col-12">
+                <h2>Adopta una mascota</h2>
+                <p>
+                    Completa un formulario con tus datos para iniciar el proceso
+                    de adopción.
+                </p>
+                <a href="/adopcion/" class="btn btn-primary">¡Adopta!</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="inicio-contacto">
+    <div class="container padtopbottom">
+        <h2>Contacto</h2>
+
+        <div class="row">
+            <div class="col-12 col-md-4 paddingtop">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Ubicación</h3>
+                        <i class="bi bi-geo-alt-fill fs-1"></i>
+                        <p class="card-text">Valparaíso<br />Chile</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 paddingtop">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Horario de Visitas</h3>
+                        <i class="bi bi-clock-fill fs-1"></i>
+                        <p class="card-text">
+                            Lunes a viernes<br />10:00 - 18:00
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 paddingtop">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Contacto</h3>
+                        <i class="bi bi-envelope-fill fs-1"></i>
+                        <p class="card-text">
+                            contacto@huellasdelpuerto.cl<br />
+                            +56 9 1234 5678
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

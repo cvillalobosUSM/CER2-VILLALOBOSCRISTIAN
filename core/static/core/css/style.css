@@ -1,0 +1,88 @@
+body {
+    font-family: 'Nunito', sans-serif;
+}
+h1{
+    font-weight: 800;
+    color: #264653;
+}
+.logo-header {
+    width: 140px;
+    height: auto;
+}
+.logo-footer {
+    width: 220px;
+    height: auto;
+}
+.justify {
+    text-align: justify;
+}
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bienvenida-img {
+    max-height: 50vh;
+    width: auto;
+}
+.tarjetas-img {
+    height: 250px;
+    object-fit: cover;
+}
+.padtopbottom {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+.navegacion {
+    background-color: #264653;
+    color: #FFFFFF;
+}
+.navbar-brand {
+    color: #FFFFFF;
+}
+.nav-link {
+    color: #FFFFFF;
+}
+.footer {
+    background-color: #264653;
+    color: #FFFFFF;
+}
+.inicio-bienvenida {
+    background-color: #FDF6EC;
+}
+.inicio-fundacion {
+    background-color: #E8F1F2;
+}
+.inicio-mascotas {
+    background-color: #FFF8F0;
+}
+.inicio-colaborar {
+    background-color: #E8F0E5;
+}
+.inicio-adoptar {
+    background-color: #F4E1D2;
+}
+.inicio-contacto {
+    background-color: #EAF2F8;
+}
+footer i {
+    font-size: 1.4rem;
+}
+.mascotas-titulo {
+    background-color: #EAF2F8;
+}
+.mascotas-galeria {
+    background-color: #FDF6EC;
+}
+.adopcion-titulo {
+    background-color: #EAF2F8;
+}
+.adopcion-formulario {
+    background-color: #FDF6EC;
+}
+.adopcion-imagen {
+    background-color: #FDF6EC;
+}
+.adopcion-imagen img {
+    height: 300px;
+}
