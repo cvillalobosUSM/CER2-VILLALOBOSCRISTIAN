@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Especie, Mascota
+from django.contrib.auth.decorators import login_required, permission_required
 
 def home(request):
     return render(request, 'core/home.html')
@@ -28,3 +29,18 @@ def detalleMascota(request,id):
         'mascota': mascota
     }
     return render(request, 'core/detalleMascota.html', context)
+
+@login_required
+@permission_required([
+    'core.view_mascota',
+    'core.add_mascota',
+    'core.change_mascota',
+    'core.delete_mascota'
+], raise_exception=True)
+def gestionMascotas(request):
+    mascotas = Mascota.objects.all()
+    context = {
+        "mascotas": mascotas,
+    }
+
+    return render(request, 'core/gestionMascotas.html', context)
