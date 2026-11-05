@@ -65,6 +65,36 @@ h1{
 .inicio-contacto {
     background-color: #EAF2F8;
 }
+.marco-mascota {
+    border: 3px solid #333333;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6);
+}
+.mascotas {
+    background-color: #FDF6EC;
+}
+.mascotas-listado {
+    background-color: #E8F1F2;
+    border-radius: 20px;
+    padding: 20px;
+}
+.lamina-mascota {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.lamina-click {
+    text-decoration: none;
+    color: inherit;
+}
+.lamina-mascota:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+.detalle-mascota {
+    background-color: #EAF2F8;
+    border: 3px solid #264653;
+    border-radius: 20px;
+    padding: 20px;
+}
 footer i {
     font-size: 1.4rem;
 }

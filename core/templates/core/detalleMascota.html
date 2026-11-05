@@ -1,0 +1,138 @@
+
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block titulo %}
+HdP | Mascota
+{% endblock %}
+
+{% block contenido %}
+
+<section class="mascotas">
+    <div class="container padtopbottom">
+        <div class="row align-items-center">
+            <!-- IMAGEN -->
+            <div class="col-12 col-md-6">
+                <img
+                    src="{{ mascota.imagen }}"
+                    alt="{{ mascota.nombre }}"
+                    class="img-fluid marco-mascota"
+                    style="max-width: 400px; width: 100%;"
+                />
+            </div>
+            <!-- INFORMACIÓN -->
+            <div class="col-12 col-md-6 detalle-mascota">
+                <h1>{{ mascota.nombre }}</h1>
+                <h4>
+                    <strong>Descripción:</strong> {{ mascota.descripcion }}
+                </h4>
+                <br>
+                <p>
+                    <strong>Especie:</strong>
+                    {{ mascota.especie.nombre }}
+                </p>
+                <p>
+                    <strong>Sexo:</strong>
+                    {{ mascota.sexo }}
+                </p>
+                <p>
+                    <strong>Edad aproximada:</strong>
+                    {{ mascota.edadAproximada }} años
+                </p>
+                <a href="/mascotas/" class="btn btn-primary">
+                    Volver al catálogo
+                </a>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- TITULO -->
+<section class="adopcion-titulo">
+    <div class="container text-center padtopbottom">
+        <h1>¡Adopta a {{ mascota.nombre }}!</h1>
+        <p>Completa el formulario para iniciar tu proceso de adopción.</p>
+    </div>
+</section>
+
+<!-- FORMULARIO -->
+<section class="adopcion-formulario">
+    <div class="container padtopbottom">
+        <form>
+            <div class="row">
+                <!-- NOMBRE -->
+                <div class="col-12 paddingtop">
+                    <label for="nombre" class="form-label"><strong>Nombre completo</strong></label>
+                    <input type="text"
+                        class="form-control"
+                        id="nombre"
+                        name="nombre"
+                        required>
+                </div>
+                <!-- CORREO -->
+                <div class="col-12 col-md-6 paddingtop">
+                    <label for="correo" class="form-label"><strong>Correo electrónico</strong></label>
+                    <input type="email" class="form-control" id="correo"name="correo" required>
+                </div>
+                <!-- TELEFONO -->
+                <div class="col-12 col-md-6 paddingtop">
+                    <label for="telefono" class="form-label"><strong>Teléfono</strong></label>
+                    <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                </div>
+                <!-- EDAD -->
+                <div class="col-12">
+                    <label for="edad" class="form-label"><strong>Edad</strong></label>
+                    <input type="number" class="form-control" id="edad" name="edad" min="18" required>
+                </div>
+                <!-- TIPO DE VIVIENDA -->
+                <div class="col-12 col-md-6">
+                    <label class="form-label"><strong>Tipo de vivienda</strong></label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="vivienda" id="casa" value="casa" required>
+                        <label class="form-check-label" for="casa">Casa</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="vivienda" id="departamento" value="departamento">
+                        <label class="form-check-label" for="departamento">Departamento</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="vivienda" id="otro" value="otro">
+                        <label class="form-check-label" for="otro">Otro</label>
+                    </div>
+                </div>
+                <!-- OTROS ANIMALES -->
+                <div class="col-12 col-md-6">
+                    <label class="form-label"><strong>¿Tienes otros animales?</strong></label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="otros-animales" id="animales-si" value="si" required>
+                        <label class="form-check-label" for="animales-si">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="otros-animales" id="animales-no" value="no">
+                        <label class="form-check-label" for="animales-no">No</label>
+                    </div>
+                </div>
+                <!-- MOTIVO -->
+                <div class="col-12">
+                    <label for="motivo" class="form-label"><strong>¿Por qué quieres adoptar?</strong></label>
+                    <textarea class="form-control" id="motivo" name="motivo" rows="5"required></textarea>
+                </div>
+                <!-- COMPROMISO -->
+                <div class="col-12 col-md-6 form-check padtopbottom">
+                    <input class="form-check-input" type="checkbox" id="responsable" name="responsable" required>
+                    <label class="form-check-label" for="responsable">
+                        Acepto el compromiso de tenencia responsable de la mascota.
+                    </label>
+                </div>
+                <!-- ENVIAR -->
+                <div class="col-12 col-md-6 text-center padtopbottom">
+                    <button type="submit" class="btn btn-primary"> Enviar solicitud</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</section>
+
+{% endblock %}

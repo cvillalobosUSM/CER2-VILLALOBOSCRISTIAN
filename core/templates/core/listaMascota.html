@@ -1,0 +1,89 @@
+
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block titulo %}
+HdP | Nuestras Mascotas
+{% endblock %}
+
+{% block contenido %}
+
+<section class="mascotas">
+    <div class="container padtopbottom">
+        <div class="text-center mb-4">
+            <h1>Nuestras Mascotas</h1>
+            <p>Conoce a nuestros animales y encuentra a tu próximo compañero.</p>
+        </div>
+
+        <!-- FILTRO POR ESPECIE -->
+        <div class="mb-4">
+            <h3>Filtrar por especie</h3>
+            <form method="GET" action="/mascotas/">
+                <select name="especie" class="form-select mb-2">
+                    <option value="">Todas las especies</option>
+                    {% for especie in especies %}
+                        <option value="{{ especie.id }}"
+                            {% if especieSeleccionada == especie.id|stringformat:"s" %}
+                                selected
+                            {% endif %}>
+                            {{ especie.nombre }}
+                        </option>
+                    {% endfor %}
+                </select>
+                <button type="submit" class="btn btn-primary">
+                    Filtrar
+                </button>
+                <a href="/mascotas/" class="btn btn-secondary">
+                    Limpiar filtro
+                </a>
+            </form>
+        </div>
+
+        <!-- LISTADO DE MASCOTAS -->
+        <div class="container mascotas-listado">
+            <div class="row">
+                <h2><strong>{{ nombreEspecieSeleccionada }}</strong></h2>
+                {% for mascota in mascotas %}
+                    <div class="col-12 col-md-4 padtopbottom">
+                        <div class="card h-100 lamina-mascota">
+                            <a href="{% url 'detalleMascota' mascota.id %}">
+                            <img
+                                src="{{ mascota.imagen }}"
+                                class="card-img-top tarjetas-img"
+                                alt="{{ mascota.nombre }}"
+                            />
+                            </a>
+                            <div class="card-body">
+                                <h3 class="card-title">
+                                    {{ mascota.nombre }}
+                                </h3>
+                                <p class="card-text">
+                                    {{ mascota.descripcion }}
+                                </p>
+                                <p>
+                                    <strong>Especie:</strong>
+                                    {{ mascota.especie.nombre }}
+                                </p>
+                                <a
+                                    href="{% url 'detalleMascota' mascota.id %}"
+                                    class="btn btn-primary"
+                                >
+                                    Ver detalles
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                {% empty %}
+                    <div class="col-12 text-center">
+                        <p>No se encontraron mascotas.</p>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}
