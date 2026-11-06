@@ -1,0 +1,145 @@
+
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block titulo %}
+RH | Modificar Mascota
+{% endblock %}
+
+{% block contenido %}
+
+<section class="mascotas">
+    <div class="container padtopbottom">
+        <div class="row align-items-center">
+            <!-- IMAGEN -->
+            <div class="col-12 col-md-6">
+                <img
+                    src="{{ mascota.imagen }}"
+                    alt="{{ mascota.nombre }}"
+                    class="img-fluid marco-mascota"
+                    style="max-width: 400px; width: 100%;"
+                />
+            </div>
+            <!-- INFORMACIÓN -->
+            <div class="col-12 col-md-6 detalle-mascota">
+                <h1>{{ mascota.nombre }}</h1>
+                <h4>
+                    <strong>Descripción:</strong> {{ mascota.descripcion }}
+                </h4>
+                <br>
+                <p>
+                    <strong>Especie:</strong>
+                    {{ mascota.especie.nombre }}
+                </p>
+                <p>
+                    <strong>Sexo:</strong>
+                    {{ mascota.sexo }}
+                </p>
+                <p>
+                    <strong>Edad aproximada:</strong>
+                    {{ mascota.edadAproximada }} años
+                </p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- FORMULARIO DE MODIFICACION -->
+
+<section class="agregarMascota">
+    <div class="container mt-5">
+        <h1>Modificar mascota</h1>
+
+        <div class="card shadow-sm mt-4 mb-4">
+            <div class="card-body p-4">
+
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" name="nombre" id="nombre" value="{{ mascota.nombre }}"
+                               class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="descripcion" class="form-label">Descripción</label>
+                        <textarea name="descripcion" id="descripcion"
+                                  class="form-control" rows="3" required>{{ mascota.descripcion }}</textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="sexo" class="form-label">Sexo</label>
+                        <select name="sexo" id="sexo" value="{{ mascota.sexo }}" class="form-select" required>
+                            <option value="">Seleccionar sexo</option>
+                            <option value="Macho"
+                            {% if mascota.sexo == "Macho" %}selected{% endif %}>Macho</option>
+
+                            <option value="Hembra"
+                            {% if mascota.sexo == "Hembra" %}selected{% endif %}>Hembra</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="edadAproximada" class="form-label">
+                            Edad aproximada
+                        </label>
+                        <input type="number" name="edadAproximada"
+                               id="edadAproximada" value="{{ mascota.edadAproximada }}" class="form-control"
+                               min="0" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="imagen" class="form-label">URL de imagen</label>
+                        <input type="url" name="imagen" id="imagen" value="{{ mascota.imagen }}"
+                               class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="especie" class="form-label">Especie</label>
+
+                        <select name="especie" id="especie" value="{{ mascota.especie }}"
+                                class="form-select" required>
+
+                            <option value="">Seleccionar especie</option>
+
+                            {% for especie in especies %}
+                                <option value="{{ especie.id }}"
+                                    {% if mascota.especie.id == especie.id %}
+                                        selected
+                                    {% endif %}>
+                                    {{ especie.nombre }}
+                                </option>
+                            {% endfor %}
+
+                        </select>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            Guardar cambios
+                        </button>
+
+                        <a href="{% url 'gestionListarMascotas' %}"
+                           class="btn btn-secondary">
+                            Cancelar
+                        </a>
+                    </div>
+                </form>
+                <div class="d-flex gap-2 mt-2">
+                    <form method="POST" action="{% url 'gestionEliminarMascota' mascota.id %}">
+                        {% csrf_token %}
+                        <button type="submit"
+                                class="btn btn-danger"
+                                onclick="return confirm('¿Estas seguro de eliminar esta mascota?')">
+                                Eliminar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}

@@ -42,7 +42,7 @@
                         />
                     </a>
                     {% if user.is_authenticated %}
-                    <h3 style="color:white"> ¡Hola, {{user.username}}! </h3>
+                    <h3 style="color:white"> ¡<strong>Hola</strong>, {{user.first_name}}! </h3>
                     {% endif %}
 
                     <button
@@ -72,12 +72,12 @@
                             <li class="nav-item">
                                 <form method="POST" action="{% url 'logout' %}">
                                     {% csrf_token %}
-                                    <button type="submit" class="btn btn-outline-danger">Cerrar sesión</button>
+                                    <button type="submit" class="btn btn-danger"><strong>Cerrar sesion</strong></button>
                                 </form>
                             </li>
                             {% else %}
                             <li>
-                                <a href="{% url 'login' %}" class="btn btn-outline-primary">Iniciar sesión</a>
+                                <a href="{% url 'login' %}" class="btn btn-success"><strong>Iniciar sesión</strong></a>
                             </li>
                             {% endif %}
 

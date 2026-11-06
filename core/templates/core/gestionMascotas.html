@@ -15,6 +15,10 @@
         <h1>Gestión de mascotas</h1>
         <h3>Listado de mascotas</h3>
 
+        <div class="d-flex mb-2">
+            <a class="btn btn-success" href="/gestion-mascotas/agregar/">Agregar mascota</a>
+        </div>
+
         <div>
             <input type="text" id="filtroMascota" class="form-control" placeholder="Escribe el nombre de una mascota...">
         </div>
@@ -41,7 +45,7 @@
                         <td>{{ mascota.sexo }}</td>
                         <td>{{ mascota.edadAproximada }}</td>
                         <td>{{ mascota.descripcion }}</td>
-                        <td><a href="#" class="btn btn-outline-primary">Abrir</a></td>
+                        <td><a href="/gestion-mascotas/modificar/{{mascota.id}}" class="btn btn-info">Abrir</a></td>
                     </tr>
                     {% empty %}
                     <tr>

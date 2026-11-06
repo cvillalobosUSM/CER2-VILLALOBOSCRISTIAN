@@ -1,0 +1,90 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+    RH | Agregar mascota
+{% endblock %}
+
+{% block contenido %}
+
+<section class="agregarMascota">
+    <div class="container mt-5">
+        <h1>Agregar mascota</h1>
+        <p>Completa los datos para registrar una nueva mascota.</p>
+
+        <div class="card shadow-sm mt-4 mb-4">
+            <div class="card-body p-4">
+
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" name="nombre" id="nombre"
+                               class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="descripcion" class="form-label">Descripción</label>
+                        <textarea name="descripcion" id="descripcion"
+                                  class="form-control" rows="3" required></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="sexo" class="form-label">Sexo</label>
+                        <select name="sexo" id="sexo" class="form-select" required>
+                            <option value="">Seleccionar sexo</option>
+                            <option value="Macho">Macho</option>
+                            <option value="Hembra">Hembra</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="edadAproximada" class="form-label">
+                            Edad aproximada
+                        </label>
+                        <input type="number" name="edadAproximada"
+                               id="edadAproximada" class="form-control"
+                               min="0" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="imagen" class="form-label">URL de imagen</label>
+                        <input type="url" name="imagen" id="imagen"
+                               class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="especie" class="form-label">Especie</label>
+
+                        <select name="especie" id="especie"
+                                class="form-select" required>
+
+                            <option value="">Seleccionar especie</option>
+
+                            {% for especie in especies %}
+                                <option value="{{ especie.id }}">
+                                    {{ especie.nombre }}
+                                </option>
+                            {% endfor %}
+
+                        </select>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            Agregar mascota
+                        </button>
+
+                        <a href="{% url 'gestionListarMascotas' %}"
+                           class="btn btn-secondary">
+                            Cancelar
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock %}
