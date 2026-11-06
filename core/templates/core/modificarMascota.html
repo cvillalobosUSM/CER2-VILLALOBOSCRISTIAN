@@ -8,20 +8,21 @@ RH | Modificar Mascota
 
 {% block contenido %}
 
-<section class="mascotas">
-    <div class="container padtopbottom">
+<section class="gestion">
+    <div class="container pt-3 pb-3">
+        <h1>Gestión de Mascotas | Modificar Mascota</h1>
         <div class="row align-items-center">
             <!-- IMAGEN -->
             <div class="col-12 col-md-6">
                 <img
                     src="{{ mascota.imagen }}"
                     alt="{{ mascota.nombre }}"
-                    class="img-fluid marco-mascota"
+                    class="img-fluid detalle-mascota-marco"
                     style="max-width: 400px; width: 100%;"
                 />
             </div>
             <!-- INFORMACIÓN -->
-            <div class="col-12 col-md-6 detalle-mascota">
+            <div class="col-12 col-md-6 detalle-mascota-info">
                 <h1>{{ mascota.nombre }}</h1>
                 <h4>
                     <strong>Descripción:</strong> {{ mascota.descripcion }}
@@ -47,11 +48,10 @@ RH | Modificar Mascota
 
 <!-- FORMULARIO DE MODIFICACION -->
 
-<section class="agregarMascota">
-    <div class="container mt-5">
-        <h1>Modificar mascota</h1>
+<section class="gestion">
+    <div class="container pt-5 pb-5">
 
-        <div class="card shadow-sm mt-4 mb-4">
+        <div class="card shadow-sm pt-4">
             <div class="card-body p-4">
 
                 <form method="POST">

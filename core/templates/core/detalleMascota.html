@@ -8,20 +8,20 @@ RH | Mascota
 
 {% block contenido %}
 
-<section class="mascotas">
-    <div class="container padtopbottom">
+<section class="detalle-mascota">
+    <div class="container pt-3 pb-3">
         <div class="row align-items-center">
             <!-- IMAGEN -->
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 mb-3">
                 <img
                     src="{{ mascota.imagen }}"
                     alt="{{ mascota.nombre }}"
-                    class="img-fluid marco-mascota"
+                    class="img-fluid detalle-mascota-marco"
                     style="max-width: 400px; width: 100%;"
                 />
             </div>
             <!-- INFORMACIÓN -->
-            <div class="col-12 col-md-6 detalle-mascota">
+            <div class="col-12 col-md-6 detalle-mascota-info">
                 <h1>{{ mascota.nombre }}</h1>
                 <h4>
                     <strong>Descripción:</strong> {{ mascota.descripcion }}
@@ -50,7 +50,7 @@ RH | Mascota
 
 <!-- TITULO -->
 <section class="adopcion-titulo">
-    <div class="container text-center padtopbottom">
+    <div class="container text-center pt-3 pb-3">
         <h1>¡Adopta a {{ mascota.nombre }}!</h1>
         <p>Completa el formulario para iniciar tu proceso de adopción.</p>
     </div>
@@ -58,7 +58,7 @@ RH | Mascota
 
 <!-- FORMULARIO -->
 <section class="adopcion-formulario">
-    <div class="container padtopbottom">
+    <div class="container pt-3 pb-3">
         <form>
             <div class="row">
                 <!-- NOMBRE -->
@@ -119,14 +119,14 @@ RH | Mascota
                     <textarea class="form-control" id="motivo" name="motivo" rows="5"required></textarea>
                 </div>
                 <!-- COMPROMISO -->
-                <div class="col-12 col-md-6 form-check padtopbottom">
+                <div class="col-12 col-md-6 form-check pt-3 pb-3">
                     <input class="form-check-input" type="checkbox" id="responsable" name="responsable" required>
                     <label class="form-check-label" for="responsable">
                         Acepto el compromiso de tenencia responsable de la mascota.
                     </label>
                 </div>
                 <!-- ENVIAR -->
-                <div class="col-12 col-md-6 text-center padtopbottom">
+                <div class="col-12 col-md-6 text-center pt-3 pb-3">
                     <button type="submit" class="btn btn-primary"> Enviar solicitud</button>
                 </div>
             </div>

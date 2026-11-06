@@ -1,3 +1,5 @@
+/* GENERAL */
+
 body {
     font-family: 'Nunito', sans-serif;
 }
@@ -5,6 +7,9 @@ h1{
     font-weight: 800;
     color: #264653;
 }
+
+/* BASE */
+
 .logo-header {
     width: 140px;
     height: auto;
@@ -15,23 +20,6 @@ h1{
 }
 .justify {
     text-align: justify;
-}
-.centered {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.bienvenida-img {
-    max-height: 50vh;
-    width: auto;
-}
-.tarjetas-img {
-    height: 250px;
-    object-fit: cover;
-}
-.padtopbottom {
-    padding-top: 5vh;
-    padding-bottom: 5vh;
 }
 .navegacion {
     background-color: #264653;
@@ -47,62 +35,54 @@ h1{
     background-color: #264653;
     color: #FFFFFF;
 }
-.inicio-bienvenida {
+footer i {
+    font-size: 1.4rem;
+}
+
+/* HOME */
+
+.bienvenida-img {
+    max-height: 50vh;
+    width: auto;
+}
+.tarjetas-img {
+    height: 250px;
+    object-fit: cover;
+}
+.home-bienvenida {
     background-color: #FDF6EC;
 }
-.inicio-fundacion {
+.home-fundacion {
     background-color: #E8F1F2;
 }
-.inicio-mascotas {
+.home-mascotas {
     background-color: #FFF8F0;
 }
-.inicio-colaborar {
+.home-colaborar {
     background-color: #E8F0E5;
 }
-.inicio-adoptar {
+.home-adoptar {
     background-color: #F4E1D2;
 }
-.inicio-contacto {
+.home-contacto {
     background-color: #EAF2F8;
 }
-.marco-mascota {
+
+/* DETALLEMASCOTA */
+
+.detalle-mascota-marco {
     border: 3px solid #333333;
     border-radius: 10px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6);
 }
-.mascotas {
+.detalle-mascota {
     background-color: #FDF6EC;
 }
-.mascotas-listado {
-    background-color: #E8F1F2;
-    border-radius: 20px;
-    padding: 20px;
-}
-.lamina-mascota {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.lamina-click {
-    text-decoration: none;
-    color: inherit;
-}
-.lamina-mascota:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-}
-.detalle-mascota {
+.detalle-mascota-info {
     background-color: #EAF2F8;
     border: 3px solid #264653;
     border-radius: 20px;
     padding: 20px;
-}
-footer i {
-    font-size: 1.4rem;
-}
-.mascotas-titulo {
-    background-color: #EAF2F8;
-}
-.mascotas-galeria {
-    background-color: #FDF6EC;
 }
 .adopcion-titulo {
     background-color: #EAF2F8;
@@ -110,9 +90,39 @@ footer i {
 .adopcion-formulario {
     background-color: #FDF6EC;
 }
-.adopcion-imagen {
-    background-color: #FDF6EC;
+
+/* LISTAMASCOTA */
+
+.lista-mascota {
+    background-color: #E8F1F2;
 }
-.adopcion-imagen img {
-    height: 300px;
+.lista-mascota-tarjeta {
+    background-color: #FDF6EC;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+.lamina-mascota {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.lamina-mascota:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+.lamina-click {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* GESTIONMASCOTA */
+.gestion {
+    background-color: #E8F0E5;
+}
+.tabla-mascotas {
+    border-radius: 20px;
+}
+.login {
+    background-color: #EAF2F8;
+}
+.login-tarjeta {
+    background-color: #FDF6EC;
 }
